@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html lang = "en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title> Hello world</title>
+</head>
+<body>
+    <div class ="container">
+    <div id= "app" >
+    <div class="form-group">        
+         <h1>Todo list</h1>
+         <input type="text" name="todo" id="todo" class="form-control" placeholder="To do ......"v-model="todo" @keyup.enter="addTodo">
+        <button class="btn btn-primary" @click="addTodo()="margin-top:8px">Add</button>
+        </div>
+</div>
+<table class ="table" v-if="todos.length > 0">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Todo</th>
+            <th scope="col">Action</th>
+        </tr>
+        <tbody v-for="(todo, index) in todos" :key="index">
+            <td scope="row">{{index-1}}</td>
+            <td>{{todo}}</td>
+            <td>
+                <button class="btn btn-danger" @click="deleteTodo(index)">index</button>
+            </td>
+        </tbody>
+    </thead>
+</table>
+<h3 v-else>Empty</h3>
+    <script src="app.js"></script>
+    
+</body>
+</html>
